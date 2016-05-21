@@ -14,12 +14,12 @@
 		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
 			</div>
 			<div class="col-2 post_resume">
-				<p class="date"> <%= post.created_at.strftime("%A, %b %d") %> </p>
-				<h2 class="nopadding post_title"> ><%= link_to post.title, post, :class => "post_title"%> </h2>
+				<p class="date"> <%= I18n.localize(post.created_at, format: "%A, %b %d") %> </p>
+				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
 			<div class="col-3 post_resume">
-				<p class="nopadding green"> A CONFIRMAR</p>
-				<p class="date"> 3543 - 453 </p>
+				<p class="nopadding status"> A CONFIRMAR</p>
+				<p class="date"><i class="fa fa-arrow-up green" aria-hidden="true">543</i>   <i class="fa fa-arrow-down red" aria-hidden="true">543</i> </p>
 			</div>				
 		</div>
 		<%end%>

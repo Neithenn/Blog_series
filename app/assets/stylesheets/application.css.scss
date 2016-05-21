@@ -9,7 +9,7 @@ $black: #000000;
 $dark: #424652;
 $light: #9a9da4;
 $line: #E9E9E9;
-//$line: #800000;
+$a_confirmar: #845422;
 $background_div: #FFFFFF;
 
 *{
@@ -71,9 +71,6 @@ body{
 						border-bottom: 2px solid $dark;
 					}
 				}
-			}
-		.selected {
-			font-weight:bold;
 			}
 		}
 			h1{

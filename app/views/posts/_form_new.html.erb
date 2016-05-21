@@ -16,6 +16,10 @@
 	</p>
 
 	<p>
+		<%= f.label :id_serie%><br />
+		<%= f.select(:id_serie, options_for_select([["got",1], ["twd",2], ["mr robot",3], ["4",4]])) %>
+
+	<p>
 		<%= f.label :content %><br />
 		<%= f.text_area :content, :class => "form-control", :rows => "20" %>
 	</p>

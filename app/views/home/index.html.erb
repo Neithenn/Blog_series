@@ -1,0 +1,27 @@
+<div id="main_div">
+		<p>
+			¿Crees sabes lo que sucedera en tus series favoritas? <b>Compruebalo!</b> Este blog esta dedicado para discutir teorias y poder votar aquellas que creas que seran verdaderas. Junta puntos para ser el que mas sabe de series!!  
+		</p>
+
+		<br>
+		<br>
+
+
+		<% @posts.each do|post|%>
+		<div class="wrapper clearfix">
+			
+			<div class="col-1 post_resume">
+		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
+			</div>
+			<div class="col-2 post_resume">
+				<p class="date"> <%= post.created_at.strftime("%A, %b %d") %> </p>
+				<h2 class="nopadding post_title"> ><%= link_to post.title, post, :class => "post_title"%> </h2>
+			</div>
+			<div class="col-3 post_resume">
+				<p class="nopadding green"> A CONFIRMAR</p>
+				<p class="date"> 3543 - 453 </p>
+			</div>				
+		</div>
+		<%end%>
+				
+</div>

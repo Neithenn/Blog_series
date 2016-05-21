@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<title>Juego de teorias</title>
+<link href='https://fonts.googleapis.com/css?family=Creepster|Rye|Wallpoet|Merriweather+Sans:400,800italic|Alegreya+Sans+SC:400,800italic' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div id="div_body">
+<header id="main_navigation">
+		<h1>JUEGO DE TEORIAS</h1>
+		<nav>
+			<a href="" class="selected">Inicio</a>
+			
+			<a href="" >Game of thrones</a>
+			<a href="">TWD</a>
+			<a href="">Mr. Robot</a>
+			<a href="">Mas series</a>
+			<a href="">Acertados</a>
+			<a href="">Contacto</a>
+		</nav>
+	</header>
+
 <%= yield %>
+
+
+	<footer id="main_footer">
+		
+		<p class="copyright">&copy; Juego de teorias</p>
+		<p>Gracias por leer!</p>
+	</footer>
+
+</div>
 
 </body>
 </html>

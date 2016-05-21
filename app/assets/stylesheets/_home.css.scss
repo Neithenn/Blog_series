@@ -1,0 +1,55 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.col-1 , .col-2, .col-3 {
+
+	float:left;
+}
+.col-1{
+//	width: 15%;
+//	padding: 0 5% 0 1%;
+	flex:0.7;
+
+}
+.col-2{
+//	width: 65%;
+	padding: 0 2% 0 3%;
+	flex:3;
+}
+.col-3{
+//	width: 20%;
+	padding: 0 5% 0 3%;
+	vertical-align:middle;
+	flex:1;
+}
+.logo{
+	weight:75px;
+	height:75px;
+	margin:1em;
+}
+.nopadding {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.date {
+	padding-top:1em;
+	margin:0;
+	text-size: 1em;
+
+}
+
+.post_title{
+	text-decoration:none;
+	color: $dark;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	&:hover{
+		text-decoration:none;
+		font-weight: bold;
+		color:$dark;
+		
+	}
+}
+.green{
+	color:yellow;
+}

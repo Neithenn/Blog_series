@@ -11,6 +11,15 @@
 <body>
 
 <div id="div_body">
+
+<% if user_signed_in? %>
+	<%= link_to 'Editar', edit_user_registration_path, :class => 'btn btn-default login' %>
+	<%= link_to 'Sign out', '/users/sign_out', :class => 'btn btn-default login', :method => :get  %>
+<% else %>
+	<%= link_to "Login", new_user_session_path, :class => 'btn btn-default login' %>
+<% end %>
+
+
 <header id="main_navigation">
 		<h1>JUEGO DE TEORIAS</h1>
 		<nav>
@@ -30,14 +39,7 @@
      <p class="alert"><%= alert %></p>
 	<% end %>
 
-<% if user_signed_in? %>
-	<strong><%= current_user.username %></strong>
-	<%= link_to 'Editar', edit_user_registration_path %>
-	<%= link_to 'Sign out', '/users/sign_out', :method => :get  %>
-<% else %>
-	<%= link_to "Sign up", new_user_registration_path %>
-	<%= link_to "Login", new_user_session_path %>
-<% end %>
+
 
 
 <%= yield %>

@@ -1,0 +1,62 @@
+<h1>A favor</h1>
+
+
+<% @post_ups.each do|post|%>
+		<div class="wrapper clearfix">
+			
+			<div class="col-1 post_resume">
+		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
+			</div>
+			<div class="col-2 post_resume">
+				<p class="date"> <%= I18n.localize(post.created_at, format: "%A, %b %d") %> </p>
+				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
+			</div>
+			<div class="col-3 post_resume vcenter">
+				<p class="nopadding status"> A CONFIRMAR</p>
+
+				<table class="center-votes">
+					<tr>
+						<td>
+							<i class="fa fa-arrow-up green" aria-hidden="true"><%=post.get_upvotes.size%></i>
+						</td><td>
+								<i class="fa fa-arrow-down red" aria-hidden="true"><%=post.get_downvotes.size%></i>
+						</td>
+					</tr>
+				</table>
+
+			</div>				
+		</div>
+		<%end%>
+
+
+<h1>En contra</h1>
+
+<% @post_downs.each do|post|%>
+		<div class="wrapper clearfix">
+			
+			<div class="col-1 post_resume">
+		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
+			</div>
+			<div class="col-2 post_resume">
+				<p class="date"> <%= I18n.localize(post.created_at, format: "%A, %b %d") %> </p>
+				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
+			</div>
+			<div class="col-3 post_resume vcenter">
+				<p class="nopadding status"> A CONFIRMAR</p>
+
+				<table class="center-votes">
+					<tr>
+						<td>
+							<i class="fa fa-arrow-up green" aria-hidden="true"><%=post.get_upvotes.size%></i>
+						</td><td>
+								<i class="fa fa-arrow-down red" aria-hidden="true"><%=post.get_downvotes.size%></i>
+						</td>
+					</tr>
+				</table>
+
+			</div>				
+		</div>
+	<%end%>
+
+
+<%= link_to 'Editar', edit_user_registration_path, :class => 'btn btn-default login' %>

@@ -13,7 +13,7 @@
 <div id="div_body">
 
 <% if user_signed_in? %>
-	<%= link_to 'Editar', edit_user_registration_path, :class => 'btn btn-default login' %>
+	<%= link_to current_user.username, dashboard_path, :class => 'btn btn-default login' %>
 	<%= link_to 'Sign out', '/users/sign_out', :class => 'btn btn-default login', :method => :get  %>
 <% else %>
 	<%= link_to "Login", new_user_session_path, :class => 'btn btn-default login' %>

@@ -49,6 +49,10 @@ class PostsController < ApplicationController
 		redirect_to post_path
 	end
 
+	def test
+	
+	end
+
 private
 
 def post_params

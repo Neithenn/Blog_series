@@ -35,9 +35,19 @@
 				<p class="date"> <%= I18n.localize(post.created_at, format: "%A, %b %d") %> </p>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
-			<div class="col-3 post_resume">
+			<div class="col-3 post_resume vcenter">
 				<p class="nopadding status"> A CONFIRMAR</p>
-				<p class="date"><i class="fa fa-arrow-up green" aria-hidden="true">543</i>   <i class="fa fa-arrow-down red" aria-hidden="true">543</i> </p>
+
+				<table class="center-votes">
+					<tr>
+						<td>
+							<i class="fa fa-arrow-up green" aria-hidden="true"><%=post.get_upvotes.size%></i>
+						</td><td>
+								<i class="fa fa-arrow-down red" aria-hidden="true"><%=post.get_downvotes.size%></i>
+						</td>
+					</tr>
+				</table>
+
 			</div>				
 		</div>
 		<%end%>

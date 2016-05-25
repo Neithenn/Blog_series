@@ -28,7 +28,9 @@ gem 'bootstrap-social-rails'
 
 gem "omniauth-google-oauth2"
 
+gem 'acts_as_votable', '~> 0.10.0'
 
+gem 'coffee-script-source', '1.8.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

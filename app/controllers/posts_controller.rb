@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 	def index
 	end
 
@@ -36,6 +36,17 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		redirect_to posts_path
+	end
+
+	#upvote from user
+	def upvote
+		@post.upvote_from current_user
+		redirect_to post_path
+	end
+
+	def downvote
+		@post.downvote_from current_user
+		redirect_to post_path
 	end
 
 private

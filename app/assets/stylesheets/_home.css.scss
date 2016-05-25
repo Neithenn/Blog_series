@@ -60,3 +60,19 @@
 .red{
 	color: red;
 }
+
+.center-votes {
+ margin: 0 auto !important;
+  float: none !important;
+
+i{
+	padding:0.2em;
+	font-size: 25px;
+	}
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

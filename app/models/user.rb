@@ -7,11 +7,12 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
   	where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-  		user.provider  = auth.provider
+	
+    	user.provider  = auth.provider
   		user.uid = auth.uid
   		user.username = auth.info.name
   		user.email = auth.info.email
-  	end
+      end
   end
 
   def self.new_with_session(params, session)
@@ -20,7 +21,7 @@ class User < ActiveRecord::Base
   			user.attributes = params
   			user.valid?
   		end
-  	else
+    else
   		super
   	end
   end

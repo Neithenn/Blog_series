@@ -25,6 +25,9 @@
 	</p>
 
 
+	<%= f.label "Estado"%><br />
+		<%= f.select(:id_status, options_for_select([["A CONFIRMAR",1], ["CONFIRMADO",2], ["RECHAZADO",3]])) %>
+
 	<p>
 		<%= f.submit "Create new post" %>
 	</p>

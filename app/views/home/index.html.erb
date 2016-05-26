@@ -1,22 +1,5 @@
 <div id="main_div">
 		
-<div class="row">
-	<div class="col-sm-4"></div>
-	<div class="col-sm-4">
-		<% if user_signed_in? %>
-			<h2>Bienvenido<h2>
-			<h2><%= current_user.username %>!<h2>
-		<% else %>
-			<h2> Ingresa ahora!<h2>
-				<div class="row">
-						<%= link_to "Login", new_user_session_path, :class => 'btn btn-default form-control' %>
-						 <%= link_to "Sign up", new_user_registration_path,  :class => "btn btn-default form-control"  %><br />
-				</div>
-		<% end %>
-	</div>
-		<div class="col-sm-4"></div>
-	</div>
-
 		<p>
 			¿Crees sabes lo que sucedera en tus series favoritas? <b>Compruebalo!</b> Este blog esta dedicado para discutir teorias y poder votar aquellas que creas que seran verdaderas. Junta puntos para ser el que mas sabe de series!!  
 		</p>
@@ -32,11 +15,18 @@
 		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
 			</div>
 			<div class="col-2 post_resume">
-				<p class="date"> <%= I18n.localize(post.created_at, format: "%A, %b %d") %> </p>
+				<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
 			<div class="col-3 post_resume vcenter">
-				<p class="nopadding status"> A CONFIRMAR</p>
+
+				<% if post.id_status == 1%>
+				<p class="nopadding status a_conf"> A CONFIRMAR</p>
+				<% elsif post.id_status == 2 %>
+				<p class="nopadding status green"> CONFIRMADO</p>
+				<%elsif post.id_status == 3%>
+				<p class="nopadding status red"> RECHAZADO</p>
+				<% end %>
 
 				<table class="center-votes">
 					<tr>

@@ -1,6 +1,6 @@
 
 <div id="main_div">
-<h1><%= @post.title %></h1>
+<h1 class="center-title"><%= @post.title %></h1>
 <div id="content blog-post">
 
    <p><%= raw(@post.content) %></p>
@@ -10,6 +10,7 @@
 
 <% if user_signed_in? %>
 
+<% if @post.id_status == 1 %>
 <table class='center-table'>
 	<tr>
 		<td>
@@ -24,6 +25,21 @@
 		</td>
 	</tr>
 </table>
+
+<% else %>
+
+	<table class='center-table'>
+		<tr>
+			<td>
+		 <i class="fa fa-arrow-up green" aria-hidden="true"><%=@post.get_upvotes.size%></i>
+			</td>
+			<td>
+		 <i class="fa fa-arrow-down red" aria-hidden="true"><%= @post.get_downvotes.size%></i>
+			</td>
+		</tr>
+	</table>
+
+<% end %>
 
 
 <% else %>

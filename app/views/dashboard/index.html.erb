@@ -8,11 +8,18 @@
 		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
 			</div>
 			<div class="col-2 post_resume">
-				<p class="date"> <%= I18n.localize(post.created_at, format: "%A, %b %d") %> </p>
+				<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
 			<div class="col-3 post_resume vcenter">
-				<p class="nopadding status"> A CONFIRMAR</p>
+
+				<% if post.id_status == 1%>
+				<p class="nopadding status a_conf"> A CONFIRMAR</p>
+				<% elsif post.id_status == 2 %>
+				<p class="nopadding status green"> CONFIRMADO</p>
+				<%elsif post.id_status == 3%>
+				<p class="nopadding status red"> RECHAZADO</p>
+				<% end %>
 
 				<table class="center-votes">
 					<tr>
@@ -38,11 +45,18 @@
 		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
 			</div>
 			<div class="col-2 post_resume">
-				<p class="date"> <%= I18n.localize(post.created_at, format: "%A, %b %d") %> </p>
+				<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d"  %> </p>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
-			<div class="col-3 post_resume vcenter">
-				<p class="nopadding status"> A CONFIRMAR</p>
+		<div class="col-3 post_resume vcenter">
+
+				<% if post.id_status == 1%>
+				<p class="nopadding status a_conf"> A CONFIRMAR</p>
+				<% elsif post.id_status == 2 %>
+				<p class="nopadding status green"> CONFIRMADO</p>
+				<%elsif post.id_status == 3%>
+				<p class="nopadding status red"> RECHAZADO</p>
+				<% end %>
 
 				<table class="center-votes">
 					<tr>
@@ -56,7 +70,7 @@
 
 			</div>				
 		</div>
-	<%end%>
+		<%end%>
 
 
 <%= link_to 'Editar', edit_user_registration_path, :class => 'btn btn-default login' %>

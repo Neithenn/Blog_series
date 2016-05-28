@@ -38,15 +38,14 @@ body{
 }
 
 
-#div_body{
+.div_body{
 
-	margin-right: 25em;
-	margin-left: 25em;
+	//margin-right: 25em;
+	//margin-left: 25em;
 	background-color: $background_div;
 
 	#main_navigation {
-		padding: 30px;
-		border-bottom: 2px solid $line;
+		padding: 20px;
 
 
 		h1{
@@ -59,24 +58,32 @@ body{
 
 		nav {
 
-			margin-left: 2.5em;
+			border: 2px solid $line;
 			a {
 				font-size: 2rem;
 				text-decoration: none;
 				color: $dark;
-				margin: 0 1rem;
+				margin: 0 0.5rem;
 				font-family: 'Alegreya Sans SC', sans-serif;
-
 					&:hover{
 						font-weight: bold;
-						border-bottom: 2px solid $dark;
+						//border-bottom: 2px solid $dark;
 					}
 				}
+
+				.navbar-nav {
+    width: 100%;
+    text-align: center;
+
+     li {
+      float: none;
+      display: inline-block;
+    }
+  }
 			}
 		}
 
 		#main_div {
-			margin-top: 50px;
 			padding-left: 20px;
 			padding-right: 20px;
 			padding-bottom:5em;
@@ -99,6 +106,14 @@ body{
 		padding: 2.5em 5%;
 		text-align:center;
 		}
+
+.navbar-default{
+background-color: white;
+border-color:white;
+
+}		
+
+
 
 @import 'home';
 @import 'auth';

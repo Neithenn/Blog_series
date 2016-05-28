@@ -1,0 +1,22 @@
+<h1>Envianos tus sugerencias!</h1>
+
+<%= form_for @contact do |f| %>	
+  <div class="form-group">
+    <label>Nombre</label>
+    <%= f.text_field :name, required: true, :class => 'form-control'%>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+     <%= f.email_field :email, required: true, :class => 'form-control'%>
+  </div>
+  <div class="form-group">
+  	<label>Mensaje</label>
+    <%= f.text_area :message, as: :text, :class => 'form-control',:rows => '10' %>
+  </div>
+
+
+   <div class="form-group hidden">
+    <%= f.text_field :username, hint:'dejar en blanco', :class => 'form-control' %>
+  </div>
+  <%= f.submit 'Enviar!', class: 'btn btn-default' %>
+<% end %>

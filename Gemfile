@@ -31,6 +31,8 @@ gem "omniauth-google-oauth2"
 gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'coffee-script-source', '1.8.0'
+
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

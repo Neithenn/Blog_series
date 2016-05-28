@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id="div_body">
+<div class="container div_body">
 
 <% if user_signed_in? %>
 	<%= link_to current_user.username, dashboard_path, :class => 'btn btn-default login' %>
@@ -21,15 +21,33 @@
 
 	<header id="main_navigation">
 		<h1>JUEGO DE TEORIAS</h1>
-		<nav>
-			<%= link_to "Inicio", root_path %>			
-			<%= link_to "Game of Thrones", got_path%>
-			<%= link_to "TWD", twd_path%>
-			<a href="">Mr. Robot</a>
-			<a href="">Mas series</a>
-			<a href="">Acertados</a>
-			<a href="">Contacto</a>
+
+		<nav class="navbar navbar-default" role="navigation">
+  		<div class="container-fluid">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse">
+		      <ul class="nav navbar-nav">
+		        <li><%= link_to "Inicio", root_path %></li>
+		        <li><%= link_to "Game of Thrones", got_path%></li>
+		        <li><%= link_to "TWD", twd_path%></li>
+		        <li><a href="">Mr. Robot</a></li>
+		        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Más Series
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Girls</a></li>
+          <li><a href="#">Supernatural</a></li>
+          <li><a href="#">Marco Polo</a></li> 
+        </ul>
+      </li>
+				<li><a href="">Acertados</a></li>
+				<li><%= link_to "Contactos", 'contacts/new'%></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
 		</nav>
+
 	</header>
 	<% if notice %>
 	<div class="row">
@@ -59,5 +77,6 @@
 
 </div>
 
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/got' => 'got_home#index', as: 'got'
   get '/twd' => 'twd_home#index', as: 'twd'
   get '/dashboard' => 'dashboard#index', as: 'dashboard'
+  resources :contacts, only: [:new, :create]
 end

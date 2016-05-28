@@ -1,11 +1,9 @@
-<h1>TWD INDEX</h1>
-
 <div id="main_div">
 <% @posts.each do|post|%>
 		<div class="wrapper clearfix">
 			
 			<div class="col-1 post_resume">
-		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
+		  	 <%= image_tag(post.img , :alt => post.title, :class => "logo img-circle") %>
 			</div>
 			<div class="col-2 post_resume">
 				<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>

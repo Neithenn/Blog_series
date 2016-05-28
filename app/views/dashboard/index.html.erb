@@ -5,10 +5,17 @@
 		<div class="wrapper clearfix">
 			
 			<div class="col-1 post_resume">
-		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
+		  	<%= image_tag(post.img , :alt => post.title, :class => "logo img-circle") %>
 			</div>
 			<div class="col-2 post_resume">
-				<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+				<div class="row">
+					<div class="col-md-8">
+						<p><%= post.desc_serie %></p>
+					</div>
+					<div class="col-md-4">
+						<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+					</div>
+				</div>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
 			<div class="col-3 post_resume vcenter">
@@ -42,10 +49,17 @@
 		<div class="wrapper clearfix">
 			
 			<div class="col-1 post_resume">
-		  	<%= image_tag("got_log.jpg", :alt => "Got logo", :class => "logo img-circle") %>
+				<%= image_tag(post.img , :alt => post.title, :class => "logo img-circle") %>
 			</div>
 			<div class="col-2 post_resume">
-				<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d"  %> </p>
+				<div class="row">
+					<div class="col-md-8">
+						<p><%= post.desc_serie %></p>
+					</div>
+					<div class="col-md-4">
+						<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+					</div>
+				</div>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
 		<div class="col-3 post_resume vcenter">

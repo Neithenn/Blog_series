@@ -31,6 +31,17 @@
 	padding:0 !important;
 	margin:0 !important;
 }
+.front_btn_1{
+		font-size:2em;
+		font-family: 'Alegreya Sans SC', sans-serif;
+	}
+
+
+.front_btn_2{
+	float:left;
+	font-size: 2em;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
 
 .date {
 	margin:0;
@@ -80,4 +91,8 @@ i{
     display: inline-block;
     vertical-align: middle;
     float: none;
+}
+
+.right_p{
+	text-align: center;
 }

@@ -5,12 +5,43 @@
 
   i{
   	padding: 0.2em;
-  	font-size: 80px;
+  	font-size: 60px;
   }
 }  
 
 .center-title{
 	color: $dark;
 	font-family: 'Alegreya Sans SC', sans-serif;
-	margin: 1em;
+
+}
+
+.show_div{
+
+	p {
+		font-size: 2rem;
+		font-family: 'Alegreya Sans SC', sans-serif;
+		}
+}
+.vote{
+	text-align: center;
+	padding: 1em;
+
+}
+
+.links{
+	text-align: center;
+	font-size: 30px;
+	padding: 1em;
+	border-top: 2px solid $line;
+	a{
+		padding: 0.7em;
+	}
+}
+
+.status_div{
+	
+	float: right;
+	p{
+		font-size:25px;
+	}
 }

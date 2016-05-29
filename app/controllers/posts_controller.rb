@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+	before_action :authenticate, :except => [:index, :show, :upvote, :updown ]
+
 	def index
 	end
 
@@ -40,17 +42,33 @@ class PostsController < ApplicationController
 
 	#upvote from user
 	def upvote
-		@post.upvote_from current_user
+		if current_user.voted_down_on? @post
+			@post.upvote_from current_user
+		else
+			@post.upvote_from current_user
+			
+
+			if @post.vote_registered?
+				puntos = current_user.points + 100
+				current_user.update_attributes(:points => puntos)
+			end
+		end	
 		redirect_to post_path
 	end
 
 	def downvote
-		@post.downvote_from current_user
-		redirect_to post_path
-	end
 
-	def test
-	
+	if current_user.voted_up_on? @post
+		@post.downvote_from current_user
+	else
+		@post.downvote_from current_user
+
+		if @post.vote_registered?
+			puntos = current_user.points + 100
+			current_user.update_attributes(:points => puntos)
+		end
+	end
+		redirect_to post_path
 	end
 
 private
@@ -62,4 +80,12 @@ end
 def find_post
 	@post = Post.friendly.find(params[:id])
 end
+
+def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "usuarioadmin" && password == "ameliemlp"
+     end
+end
+
+
 end

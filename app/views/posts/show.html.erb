@@ -1,13 +1,22 @@
 
-<div id="main_div">
+<div class="col-md-8 col-md-offset-2 show_div">
+
+<div class="status_div">
+	<% if @post.id_status == 1%>
+	<p class="nopadding status a_conf"> A CONFIRMAR</p>
+	<% elsif @post.id_status == 2 %>
+	<p class="nopadding status green"> CONFIRMADO</p>
+	<%elsif @post.id_status == 3%>
+	<p class="nopadding status red"> RECHAZADO</p>
+	<% end %>
+</div>	
+
 <h1 class="center-title"><%= @post.title %></h1>
-<div id="content blog-post">
+
 
    <p><%= raw(@post.content) %></p>
-</div>
 
-
-
+<div class="vote">
 <% if user_signed_in? %>
 
 <% if @post.id_status == 1 %>
@@ -44,10 +53,20 @@
 
 <% else %>
 
-	<h2 class="center-title">Logeate ahora para votar!</h2>
+	<h2 class="center-title"><%= link_to "Ingresa", new_user_session_path %> ahora para votar!</h2>
 
 <% end %>
-
 </div>
 
+<div class="links">
+	<a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @juegodeteorias - &amp;url=<%= url_for([@post, {only_path: false}])%>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+		<i class="fa fa-twitter"></i></a>
+
+	<a onclick="javascript:window.open('http://facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}])%>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
+
+	<a onclick="javascript:window.open('http://plus.google.com/share?url=<%= url_for([@post, {only_path: false}])%>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+</div>
+
+
+</div>
 <%= render 'disqus' %>

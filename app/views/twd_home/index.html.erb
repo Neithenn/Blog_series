@@ -1,43 +1,5 @@
-<div id="main_div">
-<% @posts.each do|post|%>
-		<div class="wrapper clearfix">
-			
-			<div class="col-1 post_resume">
-		  		<%= image_tag(post.img , :alt => post.title, :class => "logo") %>
-			</div>
-			<div class="col-2 post_resume">
-				 <div class="row">
-					<div class="col-md-8">
-						<p> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
-					</div>
-					<div class="col-md-4">
-	
-					</div>
-				</div>
-				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
-			</div>
-			<div class="col-3 post_resume vcenter">
 
-				<% if post.id_status == 1%>
-				<p class="nopadding status a_conf"> A CONFIRMAR</p>
-				<% elsif post.id_status == 2 %>
-				<p class="nopadding status green"> CONFIRMADO</p>
-				<%elsif post.id_status == 3%>
-				<p class="nopadding status red"> RECHAZADO</p>
-				<% end %>
-
-				<table class="center-votes">
-					<tr>
-						<td>
-							<i class="fa fa-arrow-up green" aria-hidden="true"><%=post.get_upvotes.size%></i>
-						</td><td>
-								<i class="fa fa-arrow-down red" aria-hidden="true"><%=post.get_downvotes.size%></i>
-						</td>
-					</tr>
-				</table>
-
-			</div>				
-		</div>
-		<%end%>
-
+<div class="col-md-10 col-md-offset-1">
+<%= image_tag("", :alt => "Negan Lucille Season 6", :class => "img-responsive img-rounded", :height => "100", :width => "700") %>
 </div>
+<%= render :partial => "/shared/post_titles"%>

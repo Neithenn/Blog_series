@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/got' => 'got_home#index', as: 'got'
   get '/twd' => 'twd_home#index', as: 'twd'
+  get '/robot' => 'robot#index', as: 'robot'
+  get '/vikings' => 'vikings#index', as: 'vikings'
+  get '/extras' => 'extras#index', as: 'extras'
   get '/dashboard' => 'dashboard#index', as: 'dashboard'
   resources :contacts, only: [:new, :create]
+
+
+  get '*path' => redirect('/')
 end

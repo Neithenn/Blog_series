@@ -33,6 +33,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'coffee-script-source', '1.8.0'
 
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
+
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

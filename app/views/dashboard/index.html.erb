@@ -1,6 +1,16 @@
-<h1>A favor</h1>
+
+<div class="row">
+<div class="col-md-4 col-md-offset-4 dashboard">
+	<h1><%= current_user.username %></h1>
+	<p class="puntos"><strong>Puntos: <%= current_user.points%></strong></p>
+</div>
+</div>
 
 
+
+
+<div id="main_div" class="col-md-10 col-md-offset-1">
+	<h1>Artículos a favor</h1>
 <% @post_ups.each do|post|%>
 		<div class="wrapper clearfix">		
 			<div class="col-1 post_resume">
@@ -9,10 +19,7 @@
 			<div class="col-2 post_resume">
 				 <div class="row">
 					<div class="col-md-8">
-						<p class="nopadding"><%= post.desc_serie %></p>
-					</div>
-					<div class="col-md-4">
-						<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+							<p class="nopadding"><%= post.desc_serie %> | <%= l post.created_at, :format => "%Y-%m-%d" %></p>
 					</div>
 				</div>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
@@ -40,10 +47,10 @@
 			</div>				
 		</div>
 		<%end%>
+</div>
 
-
-<h1>En contra</h1>
-
+<div id="main_div" class="col-md-10 col-md-offset-1">
+<h1>Artículos en contra</h1>
 <% @post_downs.each do|post|%>
 		<div class="wrapper clearfix">
 			
@@ -53,11 +60,8 @@
 			<div class="col-2 post_resume">
 				 <div class="row">
 					<div class="col-md-8">
-						<p class="nopadding"><%= post.desc_serie %></p>
-					</div>
-					<div class="col-md-4">
-						<p class="date"> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
-					</div>
+					<p class="nopadding"><%= post.desc_serie %> | <%= l post.created_at, :format => "%Y-%m-%d" %></p>
+				</div>
 				</div>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
@@ -84,6 +88,19 @@
 			</div>				
 		</div>
 		<%end%>
+</div>
 
+<div  class="col-md-10 col-md-offset-1">
+<%= link_to 'Editar Usuario', edit_user_registration_path, :class => 'btn btn-default login' %>
 
-<%= link_to 'Editar', edit_user_registration_path, :class => 'btn btn-default login' %>
+<h2>Premios</h2>
+<% if current_user.points > 299999 %>
+<h3>Whoa!! Ya tienes másd de 300.000? Ve a <%= link_to "Contactos", "contacts/new"%> y envianos un mensaje. Te responderemos con las instrucciones. <h3>
+<%else%>	
+<h3>Llega a los <strong>300.000</strong> puntos para poder escribir un post!</h3>
+<% end%>
+<br>
+<h2>¿Cómo obtengo más puntos?</h2>
+<h3>Existen dos formas básicas para conseguir más puntos. La primera es votando sobre cualquier artículo, ya sea voto positivo o negativo, se generará 100 puntos a tu favor.</h3>
+<h3> La segunda forma es más complicada pero por lo cual se obtiene mayor cantidad de puntos. Y es que un artículo cambie de estado y el usuario haya votado a favor de ese cambio. Por ejemplo, si  has votado a favor para que se cumpla una teoría y esa teoría cambia de estado a "CONFIRMADO" obtendrás una recompensa de 3000 puntos! <h3>
+</div>

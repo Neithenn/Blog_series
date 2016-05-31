@@ -7,24 +7,25 @@
 			</div>
 			<div class="col-2 post_resume">
 				 <div class="row">
-					<div class="col-md-8">
-						<p> <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
-					</div>
-					<div class="col-md-4">
-	
+					<div class="col-md-6">
+
+				<% if post.id_status == 1%>
+				<p class="nopadding"> <strong class="a_conf">A CONFIRMAR</strong> | <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+				<% elsif post.id_status == 2 %>
+				<p class="nopadding"> <strong class="green">CONFIRMADO</strong> | <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+				<%elsif post.id_status == 3%>
+				<p class="nopadding"> <strong class="red">RECHAZADO</strong> | <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+				<%else%>
+				<p class="nopadding"> <strong>REVIEW</strong> | <%= l post.created_at, :format => "%Y-%m-%d" %> </p>
+				<% end %>
+
 					</div>
 				</div>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
 			<div class="col-3 post_resume vcenter">
 
-				<% if post.id_status == 1%>
-				<p class="nopadding status a_conf"> A CONFIRMAR</p>
-				<% elsif post.id_status == 2 %>
-				<p class="nopadding status green"> CONFIRMADO</p>
-				<%elsif post.id_status == 3%>
-				<p class="nopadding status red"> RECHAZADO</p>
-				<% end %>
+			
 
 				<table class="center-votes">
 					<tr>

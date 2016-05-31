@@ -131,7 +131,15 @@ h2{
 	text-align: center;
 }
 
+.bigtitle{
+
+	text-align:center;
+	font-size: 7rem;
+	margin-bottom: 1em;
+}
+
 @import 'home';
 @import 'auth';
 @import 'show_post';
 @import 'dashboard';
+@import 'fonts';

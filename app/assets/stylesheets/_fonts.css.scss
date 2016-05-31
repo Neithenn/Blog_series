@@ -1,7 +1,7 @@
 @font-face {
 
 	font-family: 'Mrrobot';
-  src:url('assets/fonts/MR_ROBOT.ttf');
+  src:url('assets/MR_ROBOT.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
 
 	font-family: 'got';
-  src:url('Game of Thrones.ttf');
+  src:url('Game of Thrones.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +18,7 @@
 @font-face {
   
   font-family: 'twd';
-  src:url('Dead Kansas.ttf');  
+  src:font-url('Dead Kansas.ttf') format("truetype");  
   font-weight: normal;
   font-style: normal;
 
@@ -27,7 +27,7 @@
 @font-face {
   
   font-family: 'vikings';
-  src:url('VikingsFont.ttf');  
+  src:font-url('fonts/VikingsFont.ttf') format("truetype");  
   font-weight: normal;
   font-style: normal;
 

@@ -1,7 +1,7 @@
 @font-face {
 
 	font-family: 'Mrrobot';
-  src:url('MR_ROBOT.ttf') format("truetype");
+  src:font-url('MR_ROBOT.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -27,7 +27,7 @@
 @font-face {
   
   font-family: 'vikings';
-  src:url('fonts/VikingsFont.ttf') format("truetype");  
+  src:font-url('VikingsFont.ttf') format("truetype");  
   font-weight: normal;
   font-style: normal;
 

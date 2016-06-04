@@ -13,11 +13,12 @@
 	<% end %>
 </div>	
 
+<p><%= l @post.created_at, :format => "%Y-%m-%d" %></p>
 <h1 class="center-title"><%= @post.title %></h1>
 
-
-   <%= raw (@post.content) %>
-
+	<div class="content-div">
+	   <%= raw (@post.content) %>
+	</div>
 <div class="vote">
 <% if user_signed_in? %>
 

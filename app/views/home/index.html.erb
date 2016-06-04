@@ -16,7 +16,10 @@
 				<%= link_to "Ingresar", new_user_session_path, :class => 'btn btn-default login front_btn_2' %>
 			</div>
 		</div>
-			<%end%>
+		<%else%>
+		<hr>
+			<h2 class="puntos"><strong>Puntos: <%= current_user.points%></strong></h2>
+		<%end%>
 
 		<hr>
 		<br>

@@ -12,6 +12,7 @@ $light: #9a9da4;
 $line: #E9E9E9;
 $a_confirmar: #845422;
 $background_div: #FFFFFF;
+$body_div: #ffba00;
 
 *{
 	box-sizing: border-box;
@@ -34,7 +35,7 @@ $background_div: #FFFFFF;
 }
 
 body{
-	//background-color: $line;
+	//background-color: $black;
 }
 
 
@@ -45,7 +46,7 @@ body{
 	background-color: $background_div;
 
 	#main_navigation {
-		padding: 20px;
+		padding: 20px 20px 0px 20px;
 
 
 		h1{
@@ -58,7 +59,7 @@ body{
 
 		nav {
 
-			border: 2px solid $line;
+			border-bottom: 2px solid $line;
 			a {
 				font-size: 2rem;
 				text-decoration: none;

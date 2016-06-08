@@ -10,20 +10,20 @@
 </head>
 <body>
 
+
 <div class="container div_body">
 
-<% if user_signed_in? %>
+	<% if user_signed_in? %>
 	<%= link_to 'Salir', '/users/sign_out', :class => 'btn btn-default login', :method => :get  %>
 	<%= link_to current_user.username, dashboard_path, :class => 'btn btn-default login' %>
 	
 <% else %>
-    <%= link_to "Registrar", new_user_registration_path, :class => 'btn btn-default login' %>
+    <%= link_to "Registrarse", new_user_registration_path, :class => 'btn btn-default login' %>
 	<%= link_to "Ingresar", new_user_session_path, :class => 'btn btn-default login' %>
 <% end %>
 
 	<header id="main_navigation">
 		<h1>JUEGO DE TEORÍAS</h1>
-
 		<nav class="navbar navbar-default" role="navigation">
   		<div class="container-fluid">
 
@@ -51,6 +51,8 @@
 		</nav>
 
 	</header>
+
+
 	<% if notice %>
 	<div class="row">
 	<div class="col-md-4 col-md-offset-4 alert alert-info">

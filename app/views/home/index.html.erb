@@ -1,12 +1,12 @@
 <div id="main_div" class="col-md-10 col-md-offset-1">
 
 <br>
-		<p class="right_p">
+			<div class="container-fluid"><p class="right_p">
 			¿Crees saber lo que sucederá en tus series favoritas? <b>Compruébalo!</b></p>
 			<br>
 			<p class="right_p"> Discute teorías y <strong>votá</strong> aquellas que creas que son verdaderas.</p>
 			<br>
-			<p class="right_p">Consigue <strong>PUNTOS</strong> para ser el que más sabe y ganar <strong>PREMIOS</strong>!</p>
+			<p class="right_p">Consigue <strong>PUNTOS</strong> para ser el que más sabe y ganar <strong>PREMIOS</strong>!</p></div>
 
 			<% if !user_signed_in?%>
 			<div class="row">
@@ -33,6 +33,7 @@
 		  		<%= image_tag(post.img , :alt => post.title, :class => "logo") %>
 			</div>
 			<div class="col-2 post_resume">
+				<div class="vcenter2">
 				 <div class="row">
 					<div class="col-md-8">
 						<p class="nopadding"><%= post.desc_serie %> | <%= l post.created_at, :format => "%Y-%m-%d" %></p>
@@ -40,7 +41,8 @@
 				</div>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
-			<div class="col-3 post_resume vcenter">
+			</div>
+			<div class="col-3 post_resume vcenter2">
 
 				<% if post.id_status == 1%>
 				<p class="nopadding status a_conf"> A CONFIRMAR</p>
@@ -51,7 +53,7 @@
 				<%else%>
 				<p class="nopadding status">REVIEW</p>
 				<% end %>
-
+				<% if post.id_status != 4 %>
 				<table class="center-votes">
 					<tr>
 						<td>
@@ -61,7 +63,7 @@
 						</td>
 					</tr>
 				</table>
-
+				<%end%>
 			</div>				
 		</div>
 		<%end%>

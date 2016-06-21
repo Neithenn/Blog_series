@@ -1,1 +1,24 @@
-<%= render :partial => "/shared/post_titles"%>
+<div id="main_div" class="col-md-10 col-md-offset-1">
+<h2>No confirmadas</h2>
+<% @posts.each do|post|%>
+<% if post.id_status == 1 || post.id_status == 4%>
+<%= render :partial => "/shared/post_titles", :locals => {:post => post} %>
+<% end %>
+<%end%>
+
+
+<h2>Confirmadas</h2>
+<% @posts.each do|post|%>
+<% if post.id_status == 2%>
+<%=render :partial => "/shared/post_titles", :locals => {:post => post}%>
+<% end %>
+<%end%>
+
+<h2>Rechazadas</h2>
+<% @posts.each do|post|%>
+<% if post.id_status == 3%>
+<%= render :partial => "/shared/post_titles", :locals => {:post => post}%>
+<% end %>
+<%end%>
+
+</div>

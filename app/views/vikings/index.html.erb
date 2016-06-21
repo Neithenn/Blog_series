@@ -1,3 +1,27 @@
 
 <h1 class="bigtitle vikings">V i k i n g s</h1>
-<%= render :partial => "/shared/post_titles"%>
+
+<div id="main_div" class="col-md-10 col-md-offset-1">
+<h2 class="vikings">No confirmadas</h2>
+<% @posts.each do|post|%>
+<% if post.id_status == 1 || post.id_status == 4%>
+<%= render :partial => "/shared/post_titles", :locals => {:post => post} %>
+<% end %>
+<%end%>
+
+
+<h2 class="vikings">Confirmadas</h2>
+<% @posts.each do|post|%>
+<% if post.id_status == 2%>
+<%=render :partial => "/shared/post_titles", :locals => {:post => post}%>
+<% end %>
+<%end%>
+
+<h2 class="vikings">Rechazadas</h2>
+<% @posts.each do|post|%>
+<% if post.id_status == 3%>
+<%= render :partial => "/shared/post_titles", :locals => {:post => post}%>
+<% end %>
+<%end%>
+
+</div>

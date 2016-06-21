@@ -1,11 +1,11 @@
-<div id="main_div" class="col-md-10 col-md-offset-1">
-<% @posts.each do|post|%>
+
 		<div class="wrapper clearfix">
 			
 			<div class="col-1 post_resume">
 		  		<%= image_tag(post.img , :alt => post.title, :class => "logo") %>
 			</div>
 			<div class="col-2 post_resume">
+				 <div class="vcenter2">
 				 <div class="row">
 					<div class="col-md-6">
 
@@ -23,7 +23,8 @@
 				</div>
 				<h2 class="nopadding post_title"> <%= link_to post.title, post, :class => "post_title"%> </h2>
 			</div>
-			<div class="col-3 post_resume vcenter">
+			</div>
+			<div class="col-3 post_resume vcenter2">
 
 			
 			<% if post.id_status != 4 %>
@@ -40,6 +41,3 @@
 
 			</div>				
 		</div>
-		<%end%>
-
-</div>

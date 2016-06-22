@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-	before_action :authenticate, :except => [:index, :show, :upvote, :updown ]
+	before_action :authenticate, :except => [:index, :show, :upvote, :downvote ]
 
 	def index
 	end

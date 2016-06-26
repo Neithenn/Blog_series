@@ -19,14 +19,14 @@ class UserNotifier < ApplicationMailer
   	@user = user
   	@post = post
   	mail( :to => @user.email,
-  		:subject => "Felicitaciones #{@user.username} !\n La teoría #{@post.title} ha sido confirmada. \n Ganaste #{@post.points}")
+  		:subject => "Felicitaciones #{@user.username} !")
   end
 
   def send_notification_rejected(user, post)
   	@user = user
   	@post = post
   	mail( :to => @user.email,
-  		:subject => 'Acertaste! \n La teoría #{@post.title} ha sido rechazada. Ten tu recompenza por #{@post.points} puntos.')
+  		:subject => "Felicitaciones #{@user.username} !")
   
   end
 

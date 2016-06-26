@@ -101,10 +101,10 @@
 <%= link_to 'Editar Usuario', edit_user_registration_path, :class => 'btn btn-default login' %>
 
 <h2>Premios</h2>
-<% if current_user.points > 299999 %>
-<h3>Whoa!! Ya tienes másd de 300.000? Ve a <%= link_to "Contactos", "contacts/new"%> y envianos un mensaje. Te responderemos con las instrucciones. <h3>
+<% if current_user.points > 199999 %>
+<h3>Whoa!! Ya tienes másd de 200.000? Ve a <%= link_to "Contactos", "contacts/new"%> y envianos un mensaje. Te responderemos con las instrucciones. <h3>
 <%else%>	
-<h3>Llega a los <strong>300.000</strong> puntos para poder escribir un post!</h3>
+<h3>Llega a los <strong>200.000</strong> puntos para poder escribir un post!</h3>
 <% end%>
 <br>
 <h2>¿Cómo obtengo más puntos?</h2>

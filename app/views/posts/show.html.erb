@@ -18,6 +18,9 @@
 
 	<div class="content-div">
 	   <%= raw (@post.content) %>
+	   <% if @post.points != nil %>
+	   <p>Puntos:  <%= @post.points %></p>
+	   <%end%>
 	</div>
 <div class="vote">
 <% if user_signed_in? %>

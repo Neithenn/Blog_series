@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/extras' => 'extras#index', as: 'extras'
   get '/dashboard' => 'dashboard#index', as: 'dashboard'
   resources :contacts, only: [:new, :create]
+  get '/premios' => 'premios#index', as: 'premios'
 
 
   get '*path' => redirect('/')

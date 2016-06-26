@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529005352) do
+ActiveRecord::Schema.define(version: 20160626160143) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20160529005352) do
     t.string   "img"
     t.string   "written_by"
     t.string   "desc_serie"
+    t.integer  "points"
+    t.integer  "confirmar"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true

@@ -50,6 +50,15 @@
 		<%= f.select(:id_type, options_for_select([["Review",1], ["Teoria",2]])) %>
 	</p>
 
+	<p>
+		<%= f.label "Puntos"%><br />
+		<%= f.number_field :points, :class => "form-control" %>
+	</p>
+
+	<p>
+		<%= f.label "Enviar mail puntos - cerrar post"%><br />
+		<%= f.select(:confirmar, options_for_select([["Falso",1], ["Verdadero",2]])) %>
+	</p>
 
 	<p>
 		<%= f.submit "Create new post" %>

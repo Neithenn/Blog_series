@@ -29,6 +29,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update post_params
+			reward_user
 			redirect_to @post, notice: "Actualizado!"
 		else
 			render 'edit'
@@ -74,7 +75,7 @@ class PostsController < ApplicationController
 private
 
 def post_params
-	params.require(:post).permit(:title, :content, :id_serie, :id_status, :id_type, :slug, :img, :written_by, :desc_serie)
+	params.require(:post).permit(:title, :content, :id_serie, :id_status, :id_type, :slug, :img, :written_by, :desc_serie, :points, :confirmar)
 end
 
 def find_post
@@ -87,5 +88,29 @@ def authenticate
      end
 end
 
+def reward_user
+	
+	if @post.id_status == 2 && @post.confirmar == 2
+		users = @post.votes_for.up.by_type(User).voters
+		puntos = @post.points
 
+		users.each do |user|
+			new_points = user.points + puntos
+			User.find(user.id).update( points: new_points)
+			UserNotifier.send_notification_confirmation(user, @post).deliver 
+
+		end
+
+	elsif @post.id_status == 3 && @post.confirmar == 2
+
+		users = @post.votes_for.down.by_type(User).voters
+		puntos = @post.points
+
+		users.each do |user|
+			new_points = user.points + puntos
+			User.find(user.id).update( points: new_points)
+			UserNotifier.send_notification_rejected(user, @post).deliver  
+		end	 	 
+	end
+end
 end

@@ -107,9 +107,11 @@ def reward_user
 		puntos = @post.points
 
 		users.each do |user|
+			if user.points != nil
 			new_points = user.points + puntos
 			User.find(user.id).update( points: new_points)
 			UserNotifier.send_notification_rejected(user, @post).deliver  
+			end
 		end	 	 
 	end
 end

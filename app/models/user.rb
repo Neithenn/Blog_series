@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   acts_as_voter
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  after_create :send_admin_mail
   def self.from_omniauth(auth)
   	where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 	
@@ -36,6 +36,11 @@ class User < ActiveRecord::Base
   	else
   		super
   	end
+  end
+
+  def send_admin_mail
+    UserNotifier.send_notification_new_user(self).deliver
+    
   end
 
 end

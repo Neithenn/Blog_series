@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
 
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "my_registrations" }
+
+
   resources :posts do
   	member do
   		put "like" => "posts#upvote"

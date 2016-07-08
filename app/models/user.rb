@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   acts_as_voter
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   def self.from_omniauth(auth)
   	where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   		user.uid = auth.uid
   		user.username = auth.info.name
   		user.email = auth.info.email
+      user.skip_confirmation!
       end
   end
 

@@ -143,6 +143,11 @@ h2{
 margin-top: 1em;
 }
 
+.padding1 {
+	padding: 1em 0 1em 0;
+
+}
+
 @import 'home';
 @import 'auth';
 @import 'show_post';

@@ -12,7 +12,7 @@ class UserNotifier < ApplicationMailer
   def send_notification_new_user(user)
   	@user = user
   	mail( :to => 'juegodeteorias@gmail.com',
-  		:subject => 'Nuevo usuario creado #{@user.email}')
+  		:subject => 'Nuevo usuario creado')
   end
 
    def send_notification_confirmation(user, post)
